@@ -1,17 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { Component } from 'react';
+import Greeting from './componet/Greeting';
+import reactDom from 'react-dom';
+import Welcome from './componet/Welcome';
+import Hello from './componet/hello';
+import Message from './componet/message';
+import SearchBar from './componet/SerchBar'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+class App extends Component{
+  render(){
+    return(
+     <div className="App">
+       <Greeting name="blurly" heroname="Sitick">
+         <p>this is simple Paregraph</p>
+       </Greeting>
+       <Welcome/>
+       <Message/>
+       <Hello/>
+       <SearchBar/>
+       <Greeting name="suchita" heroname="Amole"/>
+       <Greeting name="Manpreet" heroname="seema"/>
+     </div>
+    );
+  }
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reactDom.render(<App/>,document.querySelector('#root'));
